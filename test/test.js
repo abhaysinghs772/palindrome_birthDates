@@ -6,7 +6,7 @@ function reverseString(str) {
 }
 
 let input = 'lol';
-console.log(reverseString(input));
+// console.log(reverseString(input));
 let reversedString = reverseString(input);
 // Ex-01: Write a function in JS that takes a string and reverses it
 
@@ -27,7 +27,7 @@ function check_Palindrome(str) {
     return str == reversedStr;
 }
 
-console.log(check_Palindrome(input));
+// console.log(check_Palindrome(input));
 // Ex-02: Write a JS function to check for palindrome
 
 // Ex-03: Write a function that converts the date from number to string
@@ -54,12 +54,12 @@ function dayToString(date) {
 }
 
 let date = {
-    day: 4,
-    month: 4,
-    year: 2000
+    day: 24,
+    month: 04,
+    year: 2020
 }
 
-console.log(dayToString(date));
+// console.log(dayToString(date));
 // Ex-03: Write a function that converts the date from number to string
 
 // Ex-04: Write a JS function that takes a date and returns all variations of it
@@ -84,3 +84,101 @@ function dateOfAllFormats(date) {
     return [dd_mm_yyyy, mm_dd_yyyy, yyyy_mm_dd, dd_mm_yy, mm_dd_yy, yy_mm_dd];
 }
 // Ex-04: Write a JS function that takes a date and returns all variations of it
+
+// Ex-05: Write a function that checks palindrome for all the date formats
+
+function checkPalindromeForAllDateFormats(date) {
+    let listallDateFormats = dateOfAllFormats(date);
+    let flag = false;
+
+    for (let i = 0; i < listallDateFormats.length; i++) {
+        if (check_Palindrome(listallDateFormats[i])) {
+            flag = true;
+            break;
+        }
+    }
+    return flag;
+}
+
+// console.log(checkPalindromeForAllDateFormats(date));
+// Ex-05: Write a function that checks palindrome for all the date formats
+
+// Ex-06: Find the next palindrome date, also how many days are in between
+
+
+function isLeapYear(year) {
+    if (year % 400 === 0) {
+        return true;
+    }
+    if (year % 100 === 0) {
+        return false;
+    }
+    if (year % 4 === 0) {
+        return true;
+    }
+    return false;
+}
+
+// console.log('is leap year', isLeapYear(2021));
+
+function nextDay(date) {
+    let day = date.day + 1; // increament the day by one 
+    let month = date.month;
+    let year = date.year;
+
+    let daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; // 0 to 11
+
+    // checking for february
+    if (month === 2) {
+        // check for leap year
+        if (isLeapYear(year)) {
+            if (day > 29) {
+                day = 1;
+                month++;
+            }
+        } else {
+            if (day > 28) {
+                day = 1;
+                month++;
+            }
+        }
+    } 
+    // check for different months
+    else {
+        // check if the day in the month exceeds its max value
+        if (day > daysInMonths[month - 1]) {
+            day = 1;
+            month++;
+        }
+    }
+
+    // increament the year if the month is greater then 12
+    if (month > 12) {
+        month = 1;
+        year++;
+    }
+
+    return {
+        day: day,
+        month: month,
+        year: year
+    };
+}
+
+function nextPalindromeDate(date) {
+    let ctr = 0;
+    let nextDate = nextDay(date);
+
+    while (1) {
+        ctr++;
+        let isPalindrome = checkPalindromeForAllDateFormats(nextDate);
+        if(isPalindrome){
+            break;
+        }
+        nextDate = nextDay(nextDate);
+    }
+    return ([ctr, nextDate]);
+}
+
+console.log(nextPalindromeDate(date));
+// Ex-06: Find the next palindrome date, also how many days are in between

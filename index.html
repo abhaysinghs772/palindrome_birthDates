@@ -1,18 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- custom stylesheet -->
-    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="/src/style.css" />
+    <!-- custom stylesheet -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+
+    <!-- fomt Awesome -->
+    <script
+      src="https://kit.fontawesome.com/a97970ba69.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- font awesome -->
     <title>Palindrome BirthDate</title>
-</head>
-<body>
-    <h1>hello world !</h1>
+  </head>
+  <body>
+    <div class="main-container">
+      <h1 class="heading">palindrome birthday! 🎂</h1>
+      <div class="input">
+        <p>enter your birthday date:</p>
+        <input id="birthDayInput" type="date" name="birthDay_input" />
+        <input id="show_Result" type="button" value="Show" />
+      </div>
 
+      <div class="result-container">
+        <p id="result"></p>
+      </div>
+    </div>
+    <footer>
+      <p>© | 2021 | Abhay Kumar</p>  
+    </footer>
 
-<script src="/src/app.js" defer></script>
-</body>
+    <script src="/src/app.js" defer></script>
+  </body>
 </html>

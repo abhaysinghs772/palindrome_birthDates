@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #fde68a;
+}
+
+body {
+  text-align: center;
+  font-family: "Work Sans", sans-serif;
+}
+
+.main-container {
+  margin: 3rem;
+}
+
+.heading {
+  font-size: xx-large;
+  margin: 2rem;
+}
+
+.input p {
+  display: block;
+  font-size: large;
+  font-weight: 600;
+}
+
+#birthDayInput {
+  font-size: 14px;
+  outline: #fff;
+  padding: 0.6rem 1rem;
+  margin: 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 258px;
+}
+
+#show_Result {
+  background: var(--primary-color);
+  border: none;
+  color: #fff;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  font-size: large;
+  cursor: pointer;
+  outline: #fff;
+  margin: auto;
+  display: block;
+}
+
+#result {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 2rem;
+}
+
+footer p {
+  font-size: large;
+  text-align: center;
+}
